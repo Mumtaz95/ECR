@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="css/full-slider.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>ECR-Register</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">E-Crime Reporting</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Register
+                    <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <form class="center-block">
+            <h1 class="text-center">Register</h1>
+            <hr>
+            <div class="auth-form-body mt-3">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="fname">First Name:</label>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <input type="text" class="form-control" name="fname" id="fname" placeholder="Paul">
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="control-label" for="lname">Last Name:</label>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <input type="text" class="form-control" name="lname" id="lname" placeholder="Walker">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="email">Email:</label>
+                    </div>
+                    <div class="col-sm-10 form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="abcd.efgh@example.com">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="cnic">CNIC:</label>
+                    </div>
+                    <div class="col-sm-5 form-group">
+                        <input type="text" class="form-control" name="cnic" id="cnic" placeholder="123456789123456(Without dashes)" maxlength="15">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="address">Full Address:</label>
+                    </div>
+                    <div class="col-sm-10 form-group">
+                        <textarea class="form-control pre-scrollable" name="address" rows="5" placeholder="House No, Street, Area, City."></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="number">Contact #:</label>
+                    </div>
+                    <div class="col-sm-10 input-group form-group">
+                        <span class="input-group-addon">+92</span>
+                        <input type="text" class="form-control" name="number" placeholder="3123456789" maxlength="10">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="password">Password:</label>
+                    </div>
+                    <div class="col-sm-10 form-group">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="********" maxlength="16">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label class="control-label" for="reTypePassword">Re-Type Password:</label>
+                    </div>
+                    <div class="col-sm-10 form-group">
+                        <input type="password" class="form-control" name="reTypePassword" id="reTypePassword" placeholder="********" maxlength="16">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        Gender:
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="radio-inline">
+                        <input type="radio" name="gender">Male
+                    </label>
+                        <label class="radio-inline">
+                        <input type="radio" name="gender">Female
+                    </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 form-group center-block">
+                        <button class="btn btn-outline-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br>
+    <!-- Page Content -->
+    <section class="py-5">
+        <div class="container">
+            <h1>E-Crime Reporting System</h1>
+            <p>The world suffers a lot. Not because of the violence of bad people but because of the silence of the good people.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; E-Crime Reporting BC130401675</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
