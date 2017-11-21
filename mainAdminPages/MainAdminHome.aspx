@@ -29,16 +29,18 @@
                         <span class="sr-only">(current)</span>                        
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FIRs</a>
+                        <a class="nav-link" href="FIRs.aspx">FIRs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Admins</a>
+                        <a class="nav-link" href="deptAdminProfiles.aspx">Admins</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FeedBacks</a>
+                        <a class="nav-link" href="FeedBacks.aspx">FeedBacks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                    <form runat="server">
+                        <asp:LinkButton class="nav-link" runat="server" OnClick="LogOut_Click">Logout</asp:LinkButton>
+                    </form>
                     </li>
                     </ul>
             </div>
@@ -53,7 +55,7 @@
     <br>
    <br>
    <br>
-    <h1>Hello Admin!</h1>
+    <h1 runat="server" name="userMail">Hello Admin!</h1>
     <br>
    <br>
    <br>

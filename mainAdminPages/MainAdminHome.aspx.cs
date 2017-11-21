@@ -9,13 +9,19 @@ public partial class mainAdminPages_MainAdminHome : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["id"] == null)
+        if (Session["mainAdmin"]==null)
         {
-            Response.Redirect("../Login.aspx");
+            Response.Redirect("~/login.aspx");
         }
         else
         {
-
+            userMail.InnerText = Session["mainAdmin"].ToString().ToLower();
         }
+
+    }
+    protected void LogOut_Click(object sender, EventArgs e)
+    {
+        Session.RemoveAll();
+        Response.Redirect("../Login.aspx");
     }
 }

@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FIRs.aspx.cs" Inherits="FIRs" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FeedBacks.aspx.cs" Inherits="mainAdminPages_FeedBacks" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,14 +27,14 @@
                         <a class="nav-link" href="MainAdminHome.aspx">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">FIRs</a>
-                        <span class="sr-only">(current)</span>                        
+                        <a class="nav-link" href="FIRs.aspx">FIRs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="deptAdminProfiles.aspx">Admins</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="FeedBacks.aspx">FeedBacks</a>
+                        <a class="nav-link" href="#">FeedBacks</a>
+                        <span class="sr-only">(current)</span>                        
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" runat="server" onserverclick="LogOut_Click">Logout</a>
@@ -47,71 +46,35 @@
    <br>
    <br>
    <br>
-
     <div class="container">
     <div class="table-responsive">
     <form id="form1" class="table table-bordered" runat="server">
         <div>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="firID"  OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnPageIndexChanging="GridView1_PageIndexChanging">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="feedBackID" OnRowDeleting="GridView1_RowDeleting" OnPageIndexChanging="GridView1_PageIndexChanging">
         <Columns>
-            <asp:TemplateField HeaderText="Complain ID" SortExpression="firID">
+            <asp:TemplateField HeaderText="Complain ID" SortExpression="feedBackID">
                 <ItemTemplate>
-                    <asp:Label ID="Label0" runat="server" Text='<%# Bind("firID") %>'>
+                    <asp:Label ID="Label0" runat="server" Text='<%# Bind("feedBackID") %>'>
                     </asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Complainant" SortExpression="Complainant">
+            <asp:TemplateField HeaderText="Complainant" SortExpression="feedBackUser">
                 <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Complainant") %>'></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("feedBackUser") %>'></asp:Label>
                 </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Type Of Complainant" SortExpression="firTypeOfComplainant">
+            </asp:TemplateField> 
+            <asp:TemplateField HeaderText="Feed Back" SortExpression="feedBackDetails">
                 <ItemTemplate>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("firTypeOfComplainant") %>'></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("feedBackDetails") %>'></asp:Label>
                 </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Type Of Crime" SortExpression="firTypeOfCrime">
-                <ItemTemplate>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("firTypeOfCrime") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Other Type" SortExpression="firIfOther">
-                    <ItemTemplate>
-                        <asp:Label ID="Label4" runat="server" Text='<%# Bind("firIfOther") %>'></asp:Label>
-                    </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Date Of Crime">
-                <ItemTemplate>
-                    <asp:Label ID="Label5" runat="server" Text='<%# Bind("firDateOfCrime") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Time Of Crime">
-                <ItemTemplate>
-                    <asp:Label ID="Label6" runat="server" Text='<%# Bind("firTmeOfCrime") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Details" SortExpression="firDetails">
-                <ItemTemplate>
-                    <asp:Label ID="Label7" runat="server" Text='<%# Bind("firDetails") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Status" SortExpression="firStatus">
-                <EditItemTemplate>
-                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("firStatus") %>'></asp:TextBox>
-                    </EditItemTemplate>
-                  <ItemTemplate>
-                      <asp:Label ID="Label8" runat="server" Text='<%# Bind("firStatus") %>'></asp:Label>
-                  </ItemTemplate>
-            </asp:TemplateField>
-                <asp:CommandField HeaderText="Action" ShowEditButton="True" ShowHeader="True" />
+            </asp:TemplateField> 
+                <asp:CommandField HeaderText="Action" ShowDeleteButton="True" ShowHeader="True" />
         </Columns>
     </asp:GridView>
         </div>
     </form>
         </div>
         </div>
-
-
     <!-- Page Content -->
     <section class="py-5">
         <div class="container">
@@ -132,5 +95,6 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/popper/popper.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>
