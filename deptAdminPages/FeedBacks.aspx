@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="deptAdminHome.aspx.cs" Inherits="deptAdminPages_deptAdminHome" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FeedBacks.aspx.cs" Inherits="mainAdminPages_FeedBacks" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Department Admin</title>
+    <title>Main Admin</title>
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -24,20 +23,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                        <span class="sr-only">(current)</span>                        
+                    <li class="nav-item">
+                        <a class="nav-link" href="deptAdminHome.aspx">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="FIRs.aspx">FIRs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="FeedBacks.aspx">FeedBacks</a>
+                        <a class="nav-link active" href="#">FeedBacks</a>
+                        <span class="sr-only">(current)</span>                        
                     </li>
                     <li class="nav-item">
-                    <form runat="server">
-                        <asp:LinkButton class="nav-link" runat="server" OnClick="LogOut_Click">Logout</asp:LinkButton>
-                    </form>
+                        <a class="nav-link" runat="server" onserverclick="LogOut_Click">Logout</a>
                     </li>
                     </ul>
             </div>
@@ -46,29 +43,35 @@
    <br>
    <br>
    <br>
-    <br>
-   <br>
-   <br>
-    <br>
-   <br>
-   <br>
-    <h1 runat="server" name="userMail">Hello Admin!</h1>
-    <br>
-   <br>
-   <br>
-    <br>
-   <br>
-   <br>
-    <br>
-   <br>
-   <br>
-    <br>
-   <br>
-   <br>
-    <br>
-   <br>
-   
-   
+    <div class="container">
+    <div class="table-responsive">
+    <form id="form1" class="table table-bordered" runat="server">
+        <div>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="feedBackID" OnRowDeleting="GridView1_RowDeleting" OnPageIndexChanging="GridView1_PageIndexChanging">
+        <Columns>
+            <asp:TemplateField HeaderText="Complain ID" SortExpression="feedBackID">
+                <ItemTemplate>
+                    <asp:Label ID="Label0" runat="server" Text='<%# Bind("feedBackID") %>'>
+                    </asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Complainant" SortExpression="feedBackUser">
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("feedBackUser") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField> 
+            <asp:TemplateField HeaderText="Feed Back" SortExpression="feedBackDetails">
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("feedBackDetails") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField> 
+                <asp:CommandField HeaderText="Action" ShowDeleteButton="True" ShowHeader="True" />
+        </Columns>
+    </asp:GridView>
+        </div>
+    </form>
+        </div>
+        </div>
     <!-- Page Content -->
     <section class="py-5">
         <div class="container">
@@ -89,5 +92,6 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/popper/popper.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>
